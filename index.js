@@ -3,6 +3,8 @@ const app = express()
 
 const PORT = 3000
 
+const arrCharacters = ["Cheryl", "Pam", "Krieger"]
+
 // CONFIGURE APP TO USE EJS
 app.set("view engine", "ejs")
 
@@ -19,13 +21,14 @@ app.get("/", (request, response) => {
 })
 
 // HTTP verb = GET   URL pattern = "localhost:3000/about"
+const faves = ["jump up high", "sit in your lap", "sing wheels on the bus"]
 app.get("/about", (req, res) => {
     // SENDS HTML
     // res.send("Some stuff about me will go here.")
     // SENDS HTML FILE
     // res.sendFile(__dirname+"/views/about.html")
     // RENDER VIEW
-    res.render("about")
+    res.render("about", {favorites: faves})
 })
 
 // HTTP verb = GET   URL pattern = "localhost:3000/blog"
