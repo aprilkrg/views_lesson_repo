@@ -7,7 +7,10 @@ const PORT = 3000
 // home route
 // HTTP verb = GET   URL pattern = "localhost:3000/"
 app.get("/", (request, response) => {
-    response.send("This is the Home Page!")
+    // ROUTE CHECK
+    // response.send("This is the Home Page!")
+    // SEND FILE
+    response.sendFile(__dirname+"/views/index.html")
 })
 
 // HTTP verb = GET   URL pattern = "localhost:3000/about"
